@@ -18,3 +18,9 @@ export const validateRegisterUser = [
 
   validateRequest
 ];
+
+export const validateLogin = [
+  body('email').isEmail().normalizeEmail().withMessage('Invalid email address'),
+  body('password').notEmpty().withMessage('Password is required'),
+  validateRequest
+];
